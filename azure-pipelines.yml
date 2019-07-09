@@ -17,7 +17,7 @@ steps:
 - task: PowerShell@2
   displayName: "Install .NET Core SDK"
   inputs:
-    script: $(Build.SourcesDirectory)\eng\Install-Latest-DotnetCore3.ps1
+    script: '$(Build.SourcesDirectory)\eng\Install-Latest-DotnetCore3.ps1'
     arguments: -v 3.0.100-preview6-012264
 
 
