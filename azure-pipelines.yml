@@ -14,10 +14,12 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: DotNetCoreInstaller@0
+- task: PowerShell@2
   displayName: "Install .NET Core SDK"
   inputs:
-    version: '3.0.100-preview6-012264'
+    script: $(Build.SourcesDirectory)\eng\Install-Latest-DotnetCore3.ps1
+    arguments: -v 3.0.100-preview6-012264
+
 
 - task: VSBuild@1
   displayName: "Restore NuGet Packages"
